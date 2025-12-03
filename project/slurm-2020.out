@@ -1,0 +1,7 @@
+==== Job started at Tue Dec  2 05:42:21 PM PST 2025 ====
+Running on host: tempura.cs.washington.edu
+CUDA_VISIBLE_DEVICES: 0,7
+Using Python: /homes/iws/abatur/.venv/bin/python
+Python 3.12.9
+Launching distributed training...
+==== Job finished at Tue Dec  2 05:42:24 PM PST 2025 ====

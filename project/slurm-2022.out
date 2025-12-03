@@ -1,0 +1,43 @@
+==== Job started at Tue Dec  2 05:53:01 PM PST 2025 ====
+Running on host: tempura.cs.washington.edu
+CUDA devices: 0,7
+Using Python: /homes/iws/abatur/.venv/bin/python
+Python 3.12.9
+Launching torchrun...
+[Rank 0] World size: 2, device: cuda:0
+
+=== Test 1: No Activation Checkpointing ===
+No-CP: 0.156618 sec, 1974.13 MB
+
+=== Test 2: Profiling Activations ===
+Layer 00: 0.750 MB, 3.036 ms
+Layer 01: 0.750 MB, 2.098 ms
+Layer 02: 0.750 MB, 2.010 ms
+Layer 03: 0.750 MB, 1.974 ms
+Layer 04: 0.750 MB, 2.045 ms
+Layer 05: 0.750 MB, 2.097 ms
+Layer 06: 0.750 MB, 1.956 ms
+Layer 07: 0.750 MB, 2.066 ms
+Layer 08: 0.750 MB, 2.023 ms
+Layer 09: 0.750 MB, 1.738 ms
+Layer 10: 0.750 MB, 1.734 ms
+Layer 11: 0.750 MB, 1.752 ms
+Layer 12: 0.750 MB, 1.749 ms
+Layer 13: 0.750 MB, 1.754 ms
+Layer 14: 0.750 MB, 1.747 ms
+Layer 15: 0.750 MB, 1.770 ms
+Layer 16: 0.750 MB, 1.754 ms
+Layer 17: 0.750 MB, 1.742 ms
+Layer 18: 0.750 MB, 1.737 ms
+Layer 19: 0.750 MB, 1.807 ms
+Layer 20: 0.750 MB, 1.765 ms
+Layer 21: 0.750 MB, 1.719 ms
+Layer 22: 0.750 MB, 1.715 ms
+Layer 23: 0.750 MB, 1.773 ms
+
+=== Test 3: Adaptive Checkpointing ===
+Baseline: 18.000 MB
+Target: 12.600 MB
+Estimated: 12.000 MB
+Checkpointing layers: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+==== Job finished at Tue Dec  2 05:53:22 PM PST 2025 ====
