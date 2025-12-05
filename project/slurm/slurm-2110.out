@@ -1,0 +1,18 @@
+==== Job started at Thu Dec  4 04:49:15 PM PST 2025 ====
+Running on host: tempura.cs.washington.edu
+CUDA devices: 0
+Using Python: /homes/iws/abatur/.venv/bin/python
+Total GPU Memory: 23.46 GB
+Target Memory Budget: 21.11 GB (90%)
+
+--- Benchmark Run (B=8) ---
+Initial Peak Memory (B=8): 2.04 GB
+Checkpoints used: 4/12
+
+--- Auto-Tuning Result ---
+Predicted B_max: 82.93 (Rounded to 82)
+Running Validation Step with B=82...
+Validation Peak Memory (B=82): 17.89 GB
+
+✅ Optimal Batch Size for 90% GPU Utilization: B=82
+==== Job finished at Thu Dec  4 04:49:25 PM PST 2025 ====

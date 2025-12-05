@@ -1,0 +1,24 @@
+==== Job started at Thu Dec  4 07:48:03 PM PST 2025 ====
+Running on host: tempura.cs.washington.edu
+CUDA devices: 0
+Using Python: /homes/iws/abatur/.venv/bin/python
+Benchmarking all modes with fixed Batch Size B=2 (Single GPU)
+
+--- Benchmarking: No-AC ---
+Time: 0.0285 sec | Peak Mem: 1.00 GB | CP Layers: 0/12
+
+--- Benchmarking: Uniform-AC ---
+Time: 0.0278 sec | Peak Mem: 0.91 GB | CP Layers: 12/12
+
+--- Benchmarking: SAC ---
+Time: 0.0228 sec | Peak Mem: 0.91 GB | CP Layers: 4/12
+
+--- Benchmarking: Adaptive-AC ---
+Time: 0.0219 sec | Peak Mem: 0.95 GB | CP Layers: 2/12
+
+==================================================
+Experiment Complete. Saved two comparison plots:
+ - single_gpu_time_comparison.png
+ - single_gpu_memory_comparison.png
+==================================================
+==== Job finished at Thu Dec  4 07:48:12 PM PST 2025 ====

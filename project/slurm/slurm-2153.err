@@ -1,0 +1,261 @@
+W1204 20:58:02.847000 140594549418880 torch/distributed/run.py:779] 
+W1204 20:58:02.847000 140594549418880 torch/distributed/run.py:779] *****************************************
+W1204 20:58:02.847000 140594549418880 torch/distributed/run.py:779] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1204 20:58:02.847000 140594549418880 torch/distributed/run.py:779] *****************************************
+W1204 20:58:21.488000 140177738058624 torch/multiprocessing/spawn.py:146] Terminating process 1264618 via signal SIGTERM
+W1204 20:58:21.489000 140177738058624 torch/multiprocessing/spawn.py:146] Terminating process 1264620 via signal SIGTERM
+W1204 20:58:21.489000 140177738058624 torch/multiprocessing/spawn.py:146] Terminating process 1264621 via signal SIGTERM
+W1204 20:58:21.699000 140348561857408 torch/multiprocessing/spawn.py:146] Terminating process 1264608 via signal SIGTERM
+W1204 20:58:21.699000 140348561857408 torch/multiprocessing/spawn.py:146] Terminating process 1264611 via signal SIGTERM
+W1204 20:58:21.700000 140348561857408 torch/multiprocessing/spawn.py:146] Terminating process 1264613 via signal SIGTERM
+W1204 20:58:21.976000 139782679337856 torch/multiprocessing/spawn.py:146] Terminating process 1264604 via signal SIGTERM
+W1204 20:58:21.976000 139782679337856 torch/multiprocessing/spawn.py:146] Terminating process 1264605 via signal SIGTERM
+W1204 20:58:21.976000 139782679337856 torch/multiprocessing/spawn.py:146] Terminating process 1264607 via signal SIGTERM
+W1204 20:58:22.037000 139805340830592 torch/multiprocessing/spawn.py:146] Terminating process 1264614 via signal SIGTERM
+W1204 20:58:22.037000 139805340830592 torch/multiprocessing/spawn.py:146] Terminating process 1264617 via signal SIGTERM
+W1204 20:58:22.037000 139805340830592 torch/multiprocessing/spawn.py:146] Terminating process 1264619 via signal SIGTERM
+Traceback (most recent call last):
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 304, in <module>
+    mp.spawn(main_worker, args=(NUM_GPUS,), nprocs=NUM_GPUS, join=True)
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 282, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 238, in start_processes
+    while not context.join():
+              ^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 189, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 3 terminated with the following error:
+Traceback (most recent call last):
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 76, in _wrap
+    fn(i, *args)
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 252, in main_worker
+    output = fsdp_model(input_ids)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 849, in forward
+    args, kwargs = _pre_forward(
+                   ^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/_runtime_utils.py", line 381, in _pre_forward
+    unshard_fn(state, handle)
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/_runtime_utils.py", line 416, in _pre_forward_unshard
+    _unshard(state, handle, state._unshard_stream, state._pre_unshard_stream)
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/_runtime_utils.py", line 300, in _unshard
+    handle.unshard()
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/_flat_param.py", line 1311, in unshard
+    padded_unsharded_flat_param = self._all_gather_flat_param(unsharded_flat_param)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/_flat_param.py", line 1402, in _all_gather_flat_param
+    dist.all_gather_into_tensor(
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/c10d_logger.py", line 79, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 3200, in all_gather_into_tensor
+    work = group._allgather_base(output_tensor, input_tensor, opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.distributed.DistBackendError: NCCL error in: ../torch/csrc/distributed/c10d/NCCLUtils.hpp:275, unhandled system error (run with NCCL_DEBUG=INFO for details), NCCL version 2.20.5
+ncclSystemError: System call (e.g. socket, malloc) or external library call failed or device error. 
+Last error:
+socketStartConnect: Connect to 172.28.1.28<45133> failed : Software caused connection abort
+
+Traceback (most recent call last):
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 304, in <module>
+    mp.spawn(main_worker, args=(NUM_GPUS,), nprocs=NUM_GPUS, join=True)
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 282, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 238, in start_processes
+    while not context.join():
+              ^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 189, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 1 terminated with the following error:
+Traceback (most recent call last):
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 76, in _wrap
+    fn(i, *args)
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 252, in main_worker
+    output = fsdp_model(input_ids)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 849, in forward
+    args, kwargs = _pre_forward(
+                   ^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/_runtime_utils.py", line 381, in _pre_forward
+    unshard_fn(state, handle)
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/_runtime_utils.py", line 416, in _pre_forward_unshard
+    _unshard(state, handle, state._unshard_stream, state._pre_unshard_stream)
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/_runtime_utils.py", line 300, in _unshard
+    handle.unshard()
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/_flat_param.py", line 1311, in unshard
+    padded_unsharded_flat_param = self._all_gather_flat_param(unsharded_flat_param)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/_flat_param.py", line 1402, in _all_gather_flat_param
+    dist.all_gather_into_tensor(
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/c10d_logger.py", line 79, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 3200, in all_gather_into_tensor
+    work = group._allgather_base(output_tensor, input_tensor, opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.distributed.DistBackendError: NCCL error in: ../torch/csrc/distributed/c10d/NCCLUtils.hpp:275, unhandled system error (run with NCCL_DEBUG=INFO for details), NCCL version 2.20.5
+ncclSystemError: System call (e.g. socket, malloc) or external library call failed or device error. 
+Last error:
+socketStartConnect: Connect to 172.28.1.28<45133> failed : Software caused connection abort
+
+Traceback (most recent call last):
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 304, in <module>
+    mp.spawn(main_worker, args=(NUM_GPUS,), nprocs=NUM_GPUS, join=True)
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 282, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 238, in start_processes
+    while not context.join():
+              ^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 189, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 1 terminated with the following error:
+Traceback (most recent call last):
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 76, in _wrap
+    fn(i, *args)
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 252, in main_worker
+    output = fsdp_model(input_ids)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 849, in forward
+    args, kwargs = _pre_forward(
+                   ^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/_runtime_utils.py", line 381, in _pre_forward
+    unshard_fn(state, handle)
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/_runtime_utils.py", line 416, in _pre_forward_unshard
+    _unshard(state, handle, state._unshard_stream, state._pre_unshard_stream)
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/_runtime_utils.py", line 300, in _unshard
+    handle.unshard()
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/_flat_param.py", line 1311, in unshard
+    padded_unsharded_flat_param = self._all_gather_flat_param(unsharded_flat_param)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/_flat_param.py", line 1402, in _all_gather_flat_param
+    dist.all_gather_into_tensor(
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/c10d_logger.py", line 79, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 3200, in all_gather_into_tensor
+    work = group._allgather_base(output_tensor, input_tensor, opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.distributed.DistBackendError: NCCL error in: ../torch/csrc/distributed/c10d/NCCLUtils.hpp:275, unhandled system error (run with NCCL_DEBUG=INFO for details), NCCL version 2.20.5
+ncclSystemError: System call (e.g. socket, malloc) or external library call failed or device error. 
+Last error:
+socketStartConnect: Connect to 172.28.1.28<45133> failed : Software caused connection abort
+
+Traceback (most recent call last):
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 304, in <module>
+    mp.spawn(main_worker, args=(NUM_GPUS,), nprocs=NUM_GPUS, join=True)
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 282, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 238, in start_processes
+    while not context.join():
+              ^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 189, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 3 terminated with the following error:
+Traceback (most recent call last):
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 76, in _wrap
+    fn(i, *args)
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 252, in main_worker
+    output = fsdp_model(input_ids)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 849, in forward
+    args, kwargs = _pre_forward(
+                   ^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/_runtime_utils.py", line 381, in _pre_forward
+    unshard_fn(state, handle)
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/_runtime_utils.py", line 416, in _pre_forward_unshard
+    _unshard(state, handle, state._unshard_stream, state._pre_unshard_stream)
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/_runtime_utils.py", line 300, in _unshard
+    handle.unshard()
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/_flat_param.py", line 1311, in unshard
+    padded_unsharded_flat_param = self._all_gather_flat_param(unsharded_flat_param)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/fsdp/_flat_param.py", line 1402, in _all_gather_flat_param
+    dist.all_gather_into_tensor(
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/c10d_logger.py", line 79, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 3200, in all_gather_into_tensor
+    work = group._allgather_base(output_tensor, input_tensor, opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.distributed.DistBackendError: NCCL error in: ../torch/csrc/distributed/c10d/NCCLUtils.hpp:275, unhandled system error (run with NCCL_DEBUG=INFO for details), NCCL version 2.20.5
+ncclSystemError: System call (e.g. socket, malloc) or external library call failed or device error. 
+Last error:
+socketStartConnect: Connect to 172.28.1.28<45133> failed : Software caused connection abort
+
+W1204 20:58:23.003000 140594549418880 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1264568 closing signal SIGTERM
+W1204 20:58:23.004000 140594549418880 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1264570 closing signal SIGTERM
+E1204 20:58:23.068000 140594549418880 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: 1) local_rank: 1 (pid: 1264569) of binary: /homes/iws/abatur/.venv/bin/python3
+Traceback (most recent call last):
+  File "/homes/iws/abatur/.venv/bin/torchrun", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 348, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+final-experiment.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2025-12-04_20:58:23
+  host      : tempura.cs.washington.edu
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 1264571)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-12-04_20:58:23
+  host      : tempura.cs.washington.edu
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 1264569)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

@@ -1,0 +1,9 @@
+==== Job started at Thu Dec  4 08:24:35 PM PST 2025 ====
+Running on host: tempura.cs.washington.edu
+CUDA devices: 0,5,6,7
+Using Python: /homes/iws/abatur/.venv/bin/python
+SAC Decision: Checkpointing 4/32 Layers.
+--- Distributed FSDP-SAC Setup (4-GPU) ---
+Model: 32L, 1280E. Global B: 12
+SAC Decision: Checkpointing 4/32 Layers.
+==== Job finished at Thu Dec  4 08:24:58 PM PST 2025 ====

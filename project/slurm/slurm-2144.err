@@ -1,0 +1,144 @@
+W1204 20:24:36.841000 140363090635648 torch/distributed/run.py:779] 
+W1204 20:24:36.841000 140363090635648 torch/distributed/run.py:779] *****************************************
+W1204 20:24:36.841000 140363090635648 torch/distributed/run.py:779] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1204 20:24:36.841000 140363090635648 torch/distributed/run.py:779] *****************************************
+/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/utils/checkpoint.py:1399: FutureWarning: `torch.cpu.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cpu', args...)` instead.
+  with device_autocast_ctx, torch.cpu.amp.autocast(**cpu_autocast_kwargs), recompute_context:  # type: ignore[attr-defined]
+/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/utils/checkpoint.py:1399: FutureWarning: `torch.cpu.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cpu', args...)` instead.
+  with device_autocast_ctx, torch.cpu.amp.autocast(**cpu_autocast_kwargs), recompute_context:  # type: ignore[attr-defined]
+/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/utils/checkpoint.py:1399: FutureWarning: `torch.cpu.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cpu', args...)` instead.
+  with device_autocast_ctx, torch.cpu.amp.autocast(**cpu_autocast_kwargs), recompute_context:  # type: ignore[attr-defined]
+/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/utils/checkpoint.py:1399: FutureWarning: `torch.cpu.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cpu', args...)` instead.
+  with device_autocast_ctx, torch.cpu.amp.autocast(**cpu_autocast_kwargs), recompute_context:  # type: ignore[attr-defined]
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/homes/iws/abatur/cse599o/cse599o/project/fsdp_train_4gpu.py", line 175, in <module>
+[rank0]:     main_worker()
+[rank0]:   File "/homes/iws/abatur/cse599o/cse599o/project/fsdp_train_4gpu.py", line 154, in main_worker
+[rank0]:     loss.backward()
+[rank0]:   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/_tensor.py", line 521, in backward
+[rank0]:     torch.autograd.backward(
+[rank0]:   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/autograd/__init__.py", line 289, in backward
+[rank0]:     _engine_run_backward(
+[rank0]:   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/autograd/graph.py", line 768, in _engine_run_backward
+[rank0]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/utils/checkpoint.py", line 1120, in unpack_hook
+[rank0]:     frame.check_recomputed_tensors_match(gid)
+[rank0]:   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/utils/checkpoint.py", line 895, in check_recomputed_tensors_match
+[rank0]:     raise CheckpointError(
+[rank0]: torch.utils.checkpoint.CheckpointError: torch.utils.checkpoint: Recomputed values for the following tensors have different metadata than during the forward pass.
+[rank0]: tensor at position 7:
+[rank0]: saved metadata: {'shape': torch.Size([3, 16, 1024, 80]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}
+[rank0]: recomputed metadata: {'shape': torch.Size([3, 16, 2048, 80]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}
+[rank0]: tensor at position 9:
+[rank0]: saved metadata: {'shape': torch.Size([3, 16, 1024, 80]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}
+[rank0]: recomputed metadata: {'shape': torch.Size([3, 16, 2048, 80]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/homes/iws/abatur/cse599o/cse599o/project/fsdp_train_4gpu.py", line 175, in <module>
+[rank1]:     main_worker()
+[rank1]:   File "/homes/iws/abatur/cse599o/cse599o/project/fsdp_train_4gpu.py", line 154, in main_worker
+[rank1]:     loss.backward()
+[rank1]:   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/_tensor.py", line 521, in backward
+[rank1]:     torch.autograd.backward(
+[rank1]:   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/autograd/__init__.py", line 289, in backward
+[rank1]:     _engine_run_backward(
+[rank1]:   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/autograd/graph.py", line 768, in _engine_run_backward
+[rank1]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/utils/checkpoint.py", line 1120, in unpack_hook
+[rank1]:     frame.check_recomputed_tensors_match(gid)
+[rank1]:   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/utils/checkpoint.py", line 895, in check_recomputed_tensors_match
+[rank1]:     raise CheckpointError(
+[rank1]: torch.utils.checkpoint.CheckpointError: torch.utils.checkpoint: Recomputed values for the following tensors have different metadata than during the forward pass.
+[rank1]: tensor at position 7:
+[rank1]: saved metadata: {'shape': torch.Size([3, 16, 1024, 80]), 'dtype': torch.float32, 'device': device(type='cuda', index=1)}
+[rank1]: recomputed metadata: {'shape': torch.Size([3, 16, 2048, 80]), 'dtype': torch.float32, 'device': device(type='cuda', index=1)}
+[rank1]: tensor at position 9:
+[rank1]: saved metadata: {'shape': torch.Size([3, 16, 1024, 80]), 'dtype': torch.float32, 'device': device(type='cuda', index=1)}
+[rank1]: recomputed metadata: {'shape': torch.Size([3, 16, 2048, 80]), 'dtype': torch.float32, 'device': device(type='cuda', index=1)}
+
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/homes/iws/abatur/cse599o/cse599o/project/fsdp_train_4gpu.py", line 175, in <module>
+[rank2]:     main_worker()
+[rank2]:   File "/homes/iws/abatur/cse599o/cse599o/project/fsdp_train_4gpu.py", line 154, in main_worker
+[rank2]:     loss.backward()
+[rank2]:   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/_tensor.py", line 521, in backward
+[rank2]:     torch.autograd.backward(
+[rank2]:   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/autograd/__init__.py", line 289, in backward
+[rank2]:     _engine_run_backward(
+[rank2]:   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/autograd/graph.py", line 768, in _engine_run_backward
+[rank2]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/utils/checkpoint.py", line 1120, in unpack_hook
+[rank2]:     frame.check_recomputed_tensors_match(gid)
+[rank2]:   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/utils/checkpoint.py", line 895, in check_recomputed_tensors_match
+[rank2]:     raise CheckpointError(
+[rank2]: torch.utils.checkpoint.CheckpointError: torch.utils.checkpoint: Recomputed values for the following tensors have different metadata than during the forward pass.
+[rank2]: tensor at position 7:
+[rank2]: saved metadata: {'shape': torch.Size([3, 16, 1024, 80]), 'dtype': torch.float32, 'device': device(type='cuda', index=2)}
+[rank2]: recomputed metadata: {'shape': torch.Size([3, 16, 2048, 80]), 'dtype': torch.float32, 'device': device(type='cuda', index=2)}
+[rank2]: tensor at position 9:
+[rank2]: saved metadata: {'shape': torch.Size([3, 16, 1024, 80]), 'dtype': torch.float32, 'device': device(type='cuda', index=2)}
+[rank2]: recomputed metadata: {'shape': torch.Size([3, 16, 2048, 80]), 'dtype': torch.float32, 'device': device(type='cuda', index=2)}
+
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/homes/iws/abatur/cse599o/cse599o/project/fsdp_train_4gpu.py", line 175, in <module>
+[rank3]:     main_worker()
+[rank3]:   File "/homes/iws/abatur/cse599o/cse599o/project/fsdp_train_4gpu.py", line 154, in main_worker
+[rank3]:     loss.backward()
+[rank3]:   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/_tensor.py", line 521, in backward
+[rank3]:     torch.autograd.backward(
+[rank3]:   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/autograd/__init__.py", line 289, in backward
+[rank3]:     _engine_run_backward(
+[rank3]:   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/autograd/graph.py", line 768, in _engine_run_backward
+[rank3]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/utils/checkpoint.py", line 1120, in unpack_hook
+[rank3]:     frame.check_recomputed_tensors_match(gid)
+[rank3]:   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/utils/checkpoint.py", line 895, in check_recomputed_tensors_match
+[rank3]:     raise CheckpointError(
+[rank3]: torch.utils.checkpoint.CheckpointError: torch.utils.checkpoint: Recomputed values for the following tensors have different metadata than during the forward pass.
+[rank3]: tensor at position 7:
+[rank3]: saved metadata: {'shape': torch.Size([3, 16, 1024, 80]), 'dtype': torch.float32, 'device': device(type='cuda', index=3)}
+[rank3]: recomputed metadata: {'shape': torch.Size([3, 16, 2048, 80]), 'dtype': torch.float32, 'device': device(type='cuda', index=3)}
+[rank3]: tensor at position 9:
+[rank3]: saved metadata: {'shape': torch.Size([3, 16, 1024, 80]), 'dtype': torch.float32, 'device': device(type='cuda', index=3)}
+[rank3]: recomputed metadata: {'shape': torch.Size([3, 16, 2048, 80]), 'dtype': torch.float32, 'device': device(type='cuda', index=3)}
+
+W1204 20:24:58.142000 140363090635648 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1255652 closing signal SIGTERM
+W1204 20:24:58.143000 140363090635648 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1255654 closing signal SIGTERM
+W1204 20:24:58.143000 140363090635648 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1255655 closing signal SIGTERM
+E1204 20:24:58.470000 140363090635648 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: 1) local_rank: 1 (pid: 1255653) of binary: /homes/iws/abatur/.venv/bin/python3
+Traceback (most recent call last):
+  File "/homes/iws/abatur/.venv/bin/torchrun", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 348, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/homes/iws/abatur/cse599o/cse599o/project/fsdp_train_4gpu.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-12-04_20:24:58
+  host      : tempura.cs.washington.edu
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 1255653)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

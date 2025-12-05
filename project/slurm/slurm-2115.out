@@ -1,0 +1,24 @@
+==== Job started at Thu Dec  4 06:46:46 PM PST 2025 ====
+Running on host: tempura.cs.washington.edu
+CUDA devices: 0
+Using Python: /homes/iws/abatur/.venv/bin/python
+Total GPU Memory: 23.46 GB
+Benchmarking all modes with fixed Batch Size B=82
+
+--- Benchmarking: None ---
+Time: 0.4008 sec | Peak Mem: 22.10 GB | CP Layers: 0/12
+
+--- Benchmarking: Uniform ---
+Time: 0.1646 sec | Peak Mem: 8.83 GB | CP Layers: 12/12
+
+--- Benchmarking: EveryOther ---
+Time: 0.1784 sec | Peak Mem: 15.45 GB | CP Layers: 6/12
+
+--- Benchmarking: Adaptive ---
+Time: 0.2121 sec | Peak Mem: 17.66 GB | CP Layers: 4/12
+
+==================================================
+Experiment Complete. Saved final_experiment_results.png.
+The Adaptive FSDP-SAC result should show the best balance.
+==================================================
+==== Job finished at Thu Dec  4 06:47:16 PM PST 2025 ====

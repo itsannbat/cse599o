@@ -1,0 +1,101 @@
+W1204 20:54:35.872000 140374011194240 torch/distributed/run.py:779] 
+W1204 20:54:35.872000 140374011194240 torch/distributed/run.py:779] *****************************************
+W1204 20:54:35.872000 140374011194240 torch/distributed/run.py:779] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1204 20:54:35.872000 140374011194240 torch/distributed/run.py:779] *****************************************
+[rank0]:[W1204 20:54:50.964102399 ProcessGroupNCCL.cpp:1168] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+[rank0]:[W1204 20:54:50.370398001 ProcessGroupNCCL.cpp:1168] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+W1204 20:54:50.746000 140658316938112 torch/multiprocessing/spawn.py:146] Terminating process 1263545 via signal SIGTERM
+W1204 20:54:50.746000 140658316938112 torch/multiprocessing/spawn.py:146] Terminating process 1263546 via signal SIGTERM
+W1204 20:54:50.751000 140658316938112 torch/multiprocessing/spawn.py:146] Terminating process 1263547 via signal SIGTERM
+Traceback (most recent call last):
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 299, in <module>
+    mp.spawn(main_worker, args=(NUM_GPUS,), nprocs=NUM_GPUS, join=True)
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 282, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 238, in start_processes
+    while not context.join():
+              ^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 189, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 0 terminated with the following error:
+Traceback (most recent call last):
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 76, in _wrap
+    fn(i, *args)
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 226, in main_worker
+    auto_wrap_policy=get_fsdp_wrap_policy(),
+                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 162, in get_fsdp_wrap_policy
+    FSDP.wrap,
+    ^^^^^^^^^
+AttributeError: type object 'FullyShardedDataParallel' has no attribute 'wrap'
+
+W1204 20:54:51.248000 139969088813952 torch/multiprocessing/spawn.py:146] Terminating process 1263539 via signal SIGTERM
+W1204 20:54:51.248000 139969088813952 torch/multiprocessing/spawn.py:146] Terminating process 1263541 via signal SIGTERM
+W1204 20:54:51.248000 139969088813952 torch/multiprocessing/spawn.py:146] Terminating process 1263543 via signal SIGTERM
+Traceback (most recent call last):
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 299, in <module>
+    mp.spawn(main_worker, args=(NUM_GPUS,), nprocs=NUM_GPUS, join=True)
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 282, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 238, in start_processes
+    while not context.join():
+              ^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 189, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 0 terminated with the following error:
+Traceback (most recent call last):
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 76, in _wrap
+    fn(i, *args)
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 226, in main_worker
+    auto_wrap_policy=get_fsdp_wrap_policy(),
+                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 162, in get_fsdp_wrap_policy
+    FSDP.wrap,
+    ^^^^^^^^^
+AttributeError: type object 'FullyShardedDataParallel' has no attribute 'wrap'
+
+W1204 20:54:51.676000 140150500432768 torch/multiprocessing/spawn.py:146] Terminating process 1263534 via signal SIGTERM
+W1204 20:54:51.677000 140150500432768 torch/multiprocessing/spawn.py:146] Terminating process 1263536 via signal SIGTERM
+W1204 20:54:51.677000 140150500432768 torch/multiprocessing/spawn.py:146] Terminating process 1263540 via signal SIGTERM
+W1204 20:54:51.712000 140374011194240 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1263490 closing signal SIGTERM
+W1204 20:54:51.717000 140374011194240 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1263492 closing signal SIGTERM
+W1204 20:54:51.717000 140374011194240 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1263493 closing signal SIGTERM
+E1204 20:54:51.780000 140374011194240 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: 1) local_rank: 1 (pid: 1263491) of binary: /homes/iws/abatur/.venv/bin/python3
+Traceback (most recent call last):
+  File "/homes/iws/abatur/.venv/bin/torchrun", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 348, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+final-experiment.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-12-04_20:54:51
+  host      : tempura.cs.washington.edu
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 1263491)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

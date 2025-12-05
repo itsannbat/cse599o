@@ -1,0 +1,9 @@
+==== Job started at Thu Dec  4 05:19:12 PM PST 2025 ====
+Running on host: tempura.cs.washington.edu
+CUDA devices: 0
+Using Python: /homes/iws/abatur/.venv/bin/python
+Total GPU Memory: 23.46 GB
+Benchmarking all modes with fixed Batch Size B=82
+
+--- Benchmarking: None ---
+==== Job finished at Thu Dec  4 05:19:20 PM PST 2025 ====

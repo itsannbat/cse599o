@@ -1,0 +1,148 @@
+W1204 20:51:40.653000 140634648783744 torch/distributed/run.py:779] 
+W1204 20:51:40.653000 140634648783744 torch/distributed/run.py:779] *****************************************
+W1204 20:51:40.653000 140634648783744 torch/distributed/run.py:779] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1204 20:51:40.653000 140634648783744 torch/distributed/run.py:779] *****************************************
+W1204 20:51:46.535000 140611169315712 torch/multiprocessing/spawn.py:146] Terminating process 1262665 via signal SIGTERM
+W1204 20:51:46.535000 140611169315712 torch/multiprocessing/spawn.py:146] Terminating process 1262667 via signal SIGTERM
+W1204 20:51:46.536000 140611169315712 torch/multiprocessing/spawn.py:146] Terminating process 1262668 via signal SIGTERM
+W1204 20:51:46.541000 139978156477312 torch/multiprocessing/spawn.py:146] Terminating process 1262655 via signal SIGTERM
+W1204 20:51:46.541000 139978156477312 torch/multiprocessing/spawn.py:146] Terminating process 1262659 via signal SIGTERM
+W1204 20:51:46.542000 139978156477312 torch/multiprocessing/spawn.py:146] Terminating process 1262661 via signal SIGTERM
+W1204 20:51:46.547000 140558954154880 torch/multiprocessing/spawn.py:146] Terminating process 1262660 via signal SIGTERM
+W1204 20:51:46.547000 140558954154880 torch/multiprocessing/spawn.py:146] Terminating process 1262662 via signal SIGTERM
+W1204 20:51:46.548000 140558954154880 torch/multiprocessing/spawn.py:146] Terminating process 1262666 via signal SIGTERM
+W1204 20:51:46.549000 140573805886336 torch/multiprocessing/spawn.py:146] Terminating process 1262651 via signal SIGTERM
+W1204 20:51:46.549000 140573805886336 torch/multiprocessing/spawn.py:146] Terminating process 1262652 via signal SIGTERM
+W1204 20:51:46.550000 140573805886336 torch/multiprocessing/spawn.py:146] Terminating process 1262654 via signal SIGTERM
+Traceback (most recent call last):
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 297, in <module>
+    mp.spawn(main_worker, args=(NUM_GPUS,), nprocs=NUM_GPUS, join=True)
+Traceback (most recent call last):
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 282, in spawn
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 297, in <module>
+    return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
+    mp.spawn(main_worker, args=(NUM_GPUS,), nprocs=NUM_GPUS, join=True)Traceback (most recent call last):
+
+    File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 297, in <module>
+        File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 282, in spawn
+   ^^^^^^^^^^^^^^^^^Traceback (most recent call last):
+^        ^return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")mp.spawn(main_worker, args=(NUM_GPUS,), nprocs=NUM_GPUS, join=True)^  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 297, in <module>
+
+
+^^^^^^^^  ^ ^ ^   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 282, in spawn
+^    ^ mp.spawn(main_worker, args=(NUM_GPUS,), nprocs=NUM_GPUS, join=True)^ 
+    ^ return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")^ 
+^ ^ ^^^^^  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 282, in spawn
+^^^ ^^ ^^ ^^^ ^^ ^^ ^    ^ ^return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")^
+ ^ ^^ ^^ ^^^^^^^^^^^ ^^ ^^^^ ^^^ ^^^ ^^^ ^^^ ^^^ ^^^ ^^^ ^^^ ^^^^^^^
+^^^^  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 238, in start_processes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^    ^^^while not context.join():^^^
+^^^^^^^^^^^^^ ^^^ ^^^ ^^^ ^^^ ^^^ ^^^ ^^^ ^^^ ^^^ ^ ^^ ^^^ ^^^ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 238, in start_processes
+^^^^^^^^^^
+^^^^^  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 189, in join
+^^^    ^^while not context.join():^^
+^^    ^raise ProcessRaisedException(msg, error_index, failed_process.pid)^^
+^^ ^^ ^ ^
+ ^ torch.multiprocessing.spawn^.  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 238, in start_processes
+^ ProcessRaisedException^ ^:  ^
+
+-- Process 3 terminated with the following error:
+Traceback (most recent call last):
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 76, in _wrap
+    fn(i, *args)
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 181, in main_worker
+    init_dist(rank, world_size)
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 174, in init_dist
+    timeout = time.timedelta(seconds=COMMUNICATION_TIMEOUT_S)
+              ^^^^^^^^^^^^^^
+AttributeError: module 'time' has no attribute 'timedelta'
+ ^    
+  ^ while not context.join():
+ 
+   File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 238, in start_processes
+^^^^^ ^ ^ ^ ^ ^ ^ ^ ^ ^ 
+     File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 189, in join
+ ^^^^^^    ^    while not context.join():^^raise ProcessRaisedException(msg, error_index, failed_process.pid)^
+
+^^^^ 
+torch.multiprocessing.spawn . ProcessRaisedException  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 189, in join
+ :  
+
+-- Process 1 terminated with the following error:
+Traceback (most recent call last):
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 76, in _wrap
+    fn(i, *args)
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 181, in main_worker
+    init_dist(rank, world_size)
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 174, in init_dist
+    timeout = time.timedelta(seconds=COMMUNICATION_TIMEOUT_S)
+              ^^^^^^^^^^^^^^
+AttributeError: module 'time' has no attribute 'timedelta'
+ 
+        ^^^^^^^^^^^^^    ^raise ProcessRaisedException(msg, error_index, failed_process.pid)
+
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 189, in join
+torch.multiprocessing.spawn.ProcessRaisedException    : raise ProcessRaisedException(msg, error_index, failed_process.pid)
+
+-- Process 3 terminated with the following error:
+Traceback (most recent call last):
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 76, in _wrap
+    fn(i, *args)
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 181, in main_worker
+    init_dist(rank, world_size)
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 174, in init_dist
+    timeout = time.timedelta(seconds=COMMUNICATION_TIMEOUT_S)
+              ^^^^^^^^^^^^^^
+AttributeError: module 'time' has no attribute 'timedelta'
+
+
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 2 terminated with the following error:
+Traceback (most recent call last):
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 76, in _wrap
+    fn(i, *args)
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 181, in main_worker
+    init_dist(rank, world_size)
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 174, in init_dist
+    timeout = time.timedelta(seconds=COMMUNICATION_TIMEOUT_S)
+              ^^^^^^^^^^^^^^
+AttributeError: module 'time' has no attribute 'timedelta'
+
+W1204 20:51:47.076000 140634648783744 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1262613 closing signal SIGTERM
+W1204 20:51:47.076000 140634648783744 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1262615 closing signal SIGTERM
+W1204 20:51:47.076000 140634648783744 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1262616 closing signal SIGTERM
+E1204 20:51:47.108000 140634648783744 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: 1) local_rank: 1 (pid: 1262614) of binary: /homes/iws/abatur/.venv/bin/python3
+Traceback (most recent call last):
+  File "/homes/iws/abatur/.venv/bin/torchrun", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 348, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+final-experiment.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-12-04_20:51:47
+  host      : tempura.cs.washington.edu
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 1262614)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

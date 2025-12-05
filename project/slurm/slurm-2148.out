@@ -1,0 +1,5 @@
+==== Job started at Thu Dec  4 08:36:50 PM PST 2025 ====
+Running on host: tempura.cs.washington.edu
+CUDA devices: 0,5,6,7
+Using Python: /homes/iws/abatur/.venv/bin/python
+==== Job finished at Thu Dec  4 08:46:58 PM PST 2025 ====

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/homes/iws/abatur/cse599o/cse599o/project/fsdp_oom_test.py", line 180, in <module>
+    main_worker()
+  File "/homes/iws/abatur/cse599o/cse599o/project/fsdp_oom_test.py", line 136, in main_worker
+    rank = int(os.environ['RANK'])
+               ~~~~~~~~~~^^^^^^^^
+  File "<frozen os>", line 714, in __getitem__
+KeyError: 'RANK'

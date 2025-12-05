@@ -1,0 +1,215 @@
+W1204 20:36:52.389000 140023043865472 torch/distributed/run.py:779] 
+W1204 20:36:52.389000 140023043865472 torch/distributed/run.py:779] *****************************************
+W1204 20:36:52.389000 140023043865472 torch/distributed/run.py:779] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1204 20:36:52.389000 140023043865472 torch/distributed/run.py:779] *****************************************
+[E1204 20:46:56.665737411 socket.cpp:957] [c10d] The client socket has timed out after 600s while trying to connect to (localhost, 12355).
+[E1204 20:46:56.665752415 socket.cpp:957] [c10d] The client socket has timed out after 600s while trying to connect to (localhost, 12355).
+[E1204 20:46:56.665755523 socket.cpp:957] [c10d] The client socket has timed out after 600s while trying to connect to (localhost, 12355).
+[E1204 20:46:56.665769491 socket.cpp:957] [c10d] The client socket has timed out after 600s while trying to connect to (localhost, 12355).
+[E1204 20:46:56.665769080 socket.cpp:957] [c10d] The client socket has timed out after 600s while trying to connect to (localhost, 12355).
+[E1204 20:46:56.665784845 socket.cpp:957] [c10d] The client socket has timed out after 600s while trying to connect to (localhost, 12355).
+[E1204 20:46:56.665784123 socket.cpp:957] [c10d] The client socket has timed out after 600s while trying to connect to (localhost, 12355).
+[E1204 20:46:56.665845574 socket.cpp:957] [c10d] The client socket has timed out after 600s while trying to connect to (localhost, 12355).
+[E1204 20:46:56.665879693 socket.cpp:957] [c10d] The client socket has timed out after 600s while trying to connect to (localhost, 12355).
+[E1204 20:46:56.665880577 socket.cpp:957] [c10d] The client socket has timed out after 600s while trying to connect to (localhost, 12355).
+[E1204 20:46:56.665885096 socket.cpp:957] [c10d] The client socket has timed out after 600s while trying to connect to (localhost, 12355).
+[E1204 20:46:56.665890004 socket.cpp:957] [c10d] The client socket has timed out after 600s while trying to connect to (localhost, 12355).
+[E1204 20:46:56.665910656 socket.cpp:957] [c10d] The client socket has timed out after 600s while trying to connect to (localhost, 12355).
+[E1204 20:46:56.665914127 socket.cpp:957] [c10d] The client socket has timed out after 600s while trying to connect to (localhost, 12355).
+[E1204 20:46:56.665915492 socket.cpp:957] [c10d] The client socket has timed out after 600s while trying to connect to (localhost, 12355).
+[E1204 20:46:56.665962518 socket.cpp:957] [c10d] The client socket has timed out after 600s while trying to connect to (localhost, 12355).
+W1204 20:46:57.629000 140170593229696 torch/multiprocessing/spawn.py:146] Terminating process 1258801 via signal SIGTERM
+W1204 20:46:57.629000 140170593229696 torch/multiprocessing/spawn.py:146] Terminating process 1258802 via signal SIGTERM
+W1204 20:46:57.631000 140304198298496 torch/multiprocessing/spawn.py:146] Terminating process 1258784 via signal SIGTERM
+W1204 20:46:57.631000 140304198298496 torch/multiprocessing/spawn.py:146] Terminating process 1258785 via signal SIGTERM
+W1204 20:46:57.631000 140304198298496 torch/multiprocessing/spawn.py:146] Terminating process 1258787 via signal SIGTERM
+W1204 20:46:57.633000 139757879933824 torch/multiprocessing/spawn.py:146] Terminating process 1258793 via signal SIGTERM
+W1204 20:46:57.634000 139757879933824 torch/multiprocessing/spawn.py:146] Terminating process 1258796 via signal SIGTERM
+W1204 20:46:57.634000 139757879933824 torch/multiprocessing/spawn.py:146] Terminating process 1258798 via signal SIGTERM
+W1204 20:46:57.636000 140475864632192 torch/multiprocessing/spawn.py:146] Terminating process 1258788 via signal SIGTERM
+W1204 20:46:57.636000 140475864632192 torch/multiprocessing/spawn.py:146] Terminating process 1258790 via signal SIGTERM
+W1204 20:46:57.636000 140475864632192 torch/multiprocessing/spawn.py:146] Terminating process 1258794 via signal SIGTERM
+Traceback (most recent call last):
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 315, in <module>
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 282, in spawn
+Traceback (most recent call last):
+      File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 315, in <module>
+return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
+Traceback (most recent call last):
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 315, in <module>
+           ^^^^^^^^  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 282, in spawn
+^  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 282, in spawn
+Traceback (most recent call last):
+^^^  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 315, in <module>
+^^^^^^^^^^^^^^^    ^return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")^
+^      File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 282, in spawn
+^return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")^
+^^^ ^ ^ ^ ^ ^  ^   ^  ^ ^  ^   ^^ ^^     ^^ return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")^^ 
+^^^^^^^^^^^^^^^^^^^ ^^^ ^^^ ^ ^^^ ^^^ ^^^^^^ ^^^ ^^^^ ^ ^^^^^^ ^^^^^^^^^^
+^^^^^  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 238, in start_processes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    ^^^while not context.join():^^^
+^^^^^^^^^^^ ^^^^^ ^^^^ ^^^ ^^^ ^^^ ^^^ ^^ ^^^ ^^^ ^^^^ ^^^ ^ ^ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^
+^
+^  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 238, in start_processes
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 189, in join
+^  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 238, in start_processes
+^^^^    ^raise ProcessRaisedException(msg, error_index, failed_process.pid)    ^
+    while not context.join():^while not context.join():
+^
+^^torch.multiprocessing.spawn^.^ ProcessRaisedException^  : 
+  
+
+-- Process 0 terminated with the following error:
+Traceback (most recent call last):
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 76, in _wrap
+    fn(i, *args)
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 197, in main_worker
+    # Create comparison chart
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 194, in init_dist
+    plot_times = [t for t in times if t != float('inf')]
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/c10d_logger.py", line 79, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/c10d_logger.py", line 93, in wrapper
+    func_return = func(*args, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 1361, in init_process_group
+    store, rank, world_size = next(rendezvous_iterator)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/rendezvous.py", line 258, in _env_rendezvous_handler
+    store = _create_c10d_store(master_addr, master_port, rank, world_size, timeout, use_libuv)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/rendezvous.py", line 181, in _create_c10d_store
+    tcp_store = TCPStore(hostname, port, world_size, False, timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.distributed.DistNetworkError: The client socket has timed out after 600s while trying to connect to (localhost, 12355).
+  
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 238, in start_processes
+             while not context.join():  
+          ^  ^^ ^^ ^^ ^^ ^^^^^ ^^ ^^ ^^ ^^ ^^ ^^ 
+^ ^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 189, in join
+^^  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 189, in join
+^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 189, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)    
+raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.torch.multiprocessing.spawnProcessRaisedException.: ProcessRaisedException
+
+-- Process 1 terminated with the following error:
+Traceback (most recent call last):
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 76, in _wrap
+    fn(i, *args)
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 197, in main_worker
+    # Create comparison chart
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 194, in init_dist
+    plot_times = [t for t in times if t != float('inf')]
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/c10d_logger.py", line 79, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/c10d_logger.py", line 93, in wrapper
+    func_return = func(*args, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 1361, in init_process_group
+    store, rank, world_size = next(rendezvous_iterator)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/rendezvous.py", line 258, in _env_rendezvous_handler
+    store = _create_c10d_store(master_addr, master_port, rank, world_size, timeout, use_libuv)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/rendezvous.py", line 181, in _create_c10d_store
+    tcp_store = TCPStore(hostname, port, world_size, False, timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.distributed.DistNetworkError: The client socket has timed out after 600s while trying to connect to (localhost, 12355).
+: 
+
+
+-- Process 2 terminated with the following error:
+Traceback (most recent call last):
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 76, in _wrap
+    fn(i, *args)
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 197, in main_worker
+    # Create comparison chart
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 194, in init_dist
+    plot_times = [t for t in times if t != float('inf')]
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/c10d_logger.py", line 79, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/c10d_logger.py", line 93, in wrapper
+    func_return = func(*args, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 1361, in init_process_group
+    store, rank, world_size = next(rendezvous_iterator)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/rendezvous.py", line 258, in _env_rendezvous_handler
+    store = _create_c10d_store(master_addr, master_port, rank, world_size, timeout, use_libuv)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/rendezvous.py", line 181, in _create_c10d_store
+    tcp_store = TCPStore(hostname, port, world_size, False, timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.distributed.DistNetworkError: The client socket has timed out after 600s while trying to connect to (localhost, 12355).
+    
+raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 3 terminated with the following error:
+Traceback (most recent call last):
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/multiprocessing/spawn.py", line 76, in _wrap
+    fn(i, *args)
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 197, in main_worker
+    # Create comparison chart
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 194, in init_dist
+    plot_times = [t for t in times if t != float('inf')]
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/c10d_logger.py", line 79, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/c10d_logger.py", line 93, in wrapper
+    func_return = func(*args, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 1361, in init_process_group
+    store, rank, world_size = next(rendezvous_iterator)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/rendezvous.py", line 258, in _env_rendezvous_handler
+    store = _create_c10d_store(master_addr, master_port, rank, world_size, timeout, use_libuv)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/rendezvous.py", line 181, in _create_c10d_store
+    tcp_store = TCPStore(hostname, port, world_size, False, timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.distributed.DistNetworkError: The client socket has timed out after 600s while trying to connect to (localhost, 12355).
+
+W1204 20:46:58.149000 140023043865472 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1258751 closing signal SIGTERM
+W1204 20:46:58.149000 140023043865472 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1258752 closing signal SIGTERM
+W1204 20:46:58.150000 140023043865472 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1258753 closing signal SIGTERM
+E1204 20:46:58.181000 140023043865472 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: 1) local_rank: 0 (pid: 1258750) of binary: /homes/iws/abatur/.venv/bin/python3
+Traceback (most recent call last):
+  File "/homes/iws/abatur/.venv/bin/torchrun", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 348, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+final-experiment.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-12-04_20:46:58
+  host      : tempura.cs.washington.edu
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 1258750)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

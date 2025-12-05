@@ -1,0 +1,4 @@
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 174
+    [Image of Time vs Memory Comparison Chart]
+     ^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?

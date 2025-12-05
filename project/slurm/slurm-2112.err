@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 202, in <module>
+    main()
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 141, in main
+    t_none, m_none, c_none = benchmark_mode(model, input_ids, 'None')
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 85, in benchmark_mode
+    run_step_with_mode(model, input_ids, mode='None')
+  File "/homes/iws/abatur/cse599o/cse599o/project/final-experiment.py", line 71, in run_step_with_mode
+    loss.backward()
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/_tensor.py", line 521, in backward
+    torch.autograd.backward(
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/autograd/__init__.py", line 289, in backward
+    _engine_run_backward(
+  File "/homes/iws/abatur/.venv/lib64/python3.12/site-packages/torch/autograd/graph.py", line 768, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: element 0 of tensors does not require grad and does not have a grad_fn
