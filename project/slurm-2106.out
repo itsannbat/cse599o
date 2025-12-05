@@ -1,0 +1,18 @@
+==== Job started at Thu Dec  4 04:07:30 PM PST 2025 ====
+Running on host: tempura.cs.washington.edu
+CUDA devices: 0
+Using Python: /homes/iws/abatur/.venv/bin/python
+Device: cuda
+Total GPU Memory: 24023 MB
+--- Warming up for Threshold 21620.475000000002MB ---
+Decisions (1=CP, 0=NoCP): [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Layers Checkpointed: 0/12
+--- Warming up for Threshold 100MB ---
+Decisions (1=CP, 0=NoCP): [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+Layers Checkpointed: 12/12
+--- Warming up for Threshold 1000MB ---
+Decisions (1=CP, 0=NoCP): [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1]
+Layers Checkpointed: 5/12
+
+Saved adaptive_results.png
+==== Job finished at Thu Dec  4 04:07:43 PM PST 2025 ====

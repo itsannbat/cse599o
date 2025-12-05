@@ -1,0 +1,14 @@
+==== Job started at Thu Dec  4 04:35:53 PM PST 2025 ====
+Running on host: tempura.cs.washington.edu
+CUDA devices: 0
+Using Python: /homes/iws/abatur/.venv/bin/python
+Total Mem: 24023 MB
+--- FSDP Align (Shard=1) | Threshold 1000MB ---
+Decisions: [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1]
+SUCCESS: Checkpoints aligned to shard boundaries.
+--- FSDP Align (Shard=4) | Threshold 1000MB ---
+Decisions: [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1]
+SUCCESS: Checkpoints aligned to shard boundaries.
+
+Saved fsdp_alignment.png
+==== Job finished at Thu Dec  4 04:36:02 PM PST 2025 ====
